@@ -28,7 +28,9 @@
   config:
     includeHarnessIdentity: false
     personaPrefix: ""
-    personaSuffix: Your working directory is {{cwd}}.
+    # dsh 0.2 起 {{cwd}} 不再是已注册提示词变量（只注册 provider/model），
+    # 工作目录由 working-directory 服务作为必需运行时上下文注入，suffix 留空。
+    personaSuffix: ""
 
 - id: dsh-purge
   inject: [systemPrompt, tools]
